@@ -1,5 +1,5 @@
-import Showcase from './components/Showcase'
+import HomePage from './pages/HomePage'
 
 export default function App() {
-  return <Showcase />
+  return <HomePage />
 }
