@@ -1,7 +1,3 @@
-// src/components/TopNav.tsx
-// Menú centrado totalmente en el navbar (logo izquierda, acciones derecha, menú al centro)
-// Panel móvil anclado dentro del banner (arriba a la derecha)
-
 import { useState } from 'react'
 
 export default function TopNav() {
@@ -13,16 +9,15 @@ export default function TopNav() {
     <div className="w-full bg-slate-100 py-3">
       <div className="mx-auto max-w-screen-2xl rounded-2xl border border-slate-200 bg-white shadow-sm">
         {/* ¡IMPORTANTE!: nav relativo para anclar el dropdown móvil */}
-        
 
-<nav className="relative flex items-center justify-between px-4 py-3 md:px-6 md:grid md:grid-cols-[1fr_auto_1fr] md:items-center">
-
-
+        <nav className="relative flex items-center justify-between px-4 py-3 md:px-6 md:grid md:grid-cols-[1fr_auto_1fr] md:items-center">
           {/* Logo */}
           <div className="flex items-center gap-2">
             <a href="#" className="group inline-flex items-center gap-2" aria-label="Inicio">
               <LeafIcon className="h-7 w-7 text-emerald-600 transition-transform group-hover:-rotate-6" />
-              <span className="text-lg font-semibold tracking-tight text-emerald-600">VerdeVivo</span>
+              <span className="text-lg font-semibold tracking-tight text-emerald-600">
+                VerdeVivo
+              </span>
             </a>
           </div>
 
@@ -59,20 +54,24 @@ export default function TopNav() {
               aria-label="Cuenta"
               title="Cuenta"
             >
-              <img src="https://i.pravatar.cc/100?img=12" alt="Avatar" className="h-full w-full object-cover" />
+              <img
+                src="https://i.pravatar.cc/100?img=12"
+                alt="Avatar"
+                className="h-full w-full object-cover"
+              />
             </button>
           </div>
 
           {/* Botón mobile (alineado a la derecha en el banner) */}
           <div className="ml-auto flex items-center gap-2 md:hidden">
             <button
-  onClick={() => setOpen((v) => !v)}
-  className="md:hidden inline-flex items-center rounded-md p-2 text-slate-700 ring-1 ring-slate-200"
-  aria-expanded={open}
-  aria-label="Abrir menú"
->
-  <BurgerIcon className="h-5 w-5" />
-</button>
+              onClick={() => setOpen((v) => !v)}
+              className="md:hidden inline-flex items-center rounded-md p-2 text-slate-700 ring-1 ring-slate-200"
+              aria-expanded={open}
+              aria-label="Abrir menú"
+            >
+              <BurgerIcon className="h-5 w-5" />
+            </button>
           </div>
 
           {/* Panel mobile dentro del banner (dropdown anclado) */}
@@ -120,7 +119,11 @@ export default function TopNav() {
                     Carrito
                   </a>
                   <button className="inline-flex h-10 w-10 items-center justify-center overflow-hidden rounded-full ring-1 ring-slate-200">
-                    <img src="https://i.pravatar.cc/100?img=12" alt="Avatar" className="h-full w-full object-cover" />
+                    <img
+                      src="https://i.pravatar.cc/100?img=12"
+                      alt="Avatar"
+                      className="h-full w-full object-cover"
+                    />
                   </button>
                 </div>
               </div>
@@ -149,7 +152,13 @@ function CartIcon({ className = '' }: { className?: string }) {
 }
 function BurgerIcon({ className = '' }: { className?: string }) {
   return (
-    <svg className={className} viewBox="0 0 24 24" stroke="currentColor" fill="none" aria-hidden="true">
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+      fill="none"
+      aria-hidden="true"
+    >
       <path strokeWidth="2" strokeLinecap="round" d="M4 6h16M4 12h16M4 18h16" />
     </svg>
   )
